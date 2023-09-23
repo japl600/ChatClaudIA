@@ -1,5 +1,4 @@
 import openai
-import base64
 import streamlit as st
 
 with st.sidebar:
@@ -11,24 +10,16 @@ with st.sidebar:
 st.title("💬 Claud-IA")
 st.caption("💅 A Belcorp chatbot powered by OpenAI LLM")
 
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+page_bg_img = '''
+<style>
+.stApp {
+background-image: url("https://img.freepik.com/free-photo/portrait-woman-applying-make-up-with-make-up-brush_23-2149206649.jpg?w=2000&t=st=1695460594~exp=1695461194~hmac=4eb75f9ccfb9e10b75678fe75593561f9ca3070b7f7cbdf8a167dbb062fe5f27");
+background-size: cover;
+}
+</style>
+'''
 
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
-    }
-    </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
-set_background('./images/background.png')
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 if "messages" not in st.session_state:
