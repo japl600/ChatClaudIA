@@ -9,6 +9,19 @@ with st.sidebar:
 
 st.title("💬 Claud-IA")
 st.caption("💅 A Belcorp chatbot powered by OpenAI LLM")
+
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
