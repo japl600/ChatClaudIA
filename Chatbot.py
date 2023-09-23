@@ -12,7 +12,7 @@ st.caption("💅 A Belcorp chatbot powered by OpenAI LLM")
 
 page_bg_img = '''
 <style>
-body {
+.stApp {
 background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
 background-size: cover;
 }
